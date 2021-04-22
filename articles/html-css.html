@@ -4,34 +4,74 @@
 <head>
     <title>Margin vs. Padding</title>
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <style>
+        #contents-grid {
+            padding: 18px;
+            margin-top: 35px;
+            height: 2000px;
+            display: grid;
+            background-color: white;
+            grid-template-columns: 2fr 4fr 1fr;
+        }
+
+
+        pre {
+            font-size: 18px;
+            color: white;
+            font-family: monospace;
+            background-color: #111;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
+    <div class="navbar">
+        <a href="../index.html">Articles</a>
+        <a href="../aboutme.html">About me</a>
+    </div>
+    <div id="contents-grid">
+        <div></div>
         <div>
             <h1>The Difference between Margin and Padding</h1>
-            <p>In this article, we're going to explore the difference between Margin and Padding.
-                But first we'll take a quick look at The CSS Box Model layout in order to understand how Margin and
-                Padding work and when to use each.</p>
+            <p>In this short blog post, we're going to see the difference between CSS Margin and CSS Padding using
+                images. I'm going to use art exhibitions as an example to show the difference.</p>
             <h2>Art Display</h2>
-            <p>I would like explain the The CSS Box Model using an analogy.
-            Art exhibitions will be my Analogy.
-            </p>
-            <p>Take a look at the photo below. </p>
-            <img width="500px" src="https://c.pxhere.com/photos/02/08/paris_exhibition_exposition_bnf_op_ra_biblioth_quenationaledefrance_palaisgarnier_operadeparis-589641.jpg!d" />
+            <p>Art paintings, in any exhibition, are placed on walls and each painting is separated with some space as
+                in the photo below. </p>
+            <img width="500px" src="./html-css/two-paintings.jpg" />
             <p>
-                Notice the negative space between the painting and the wooden frame, and the negative space between the frames.
-                The whitespace marked in green are called padding in CSS nad Padding is the space that sits between the content (the painting in this analogy) and border (the wooden frame).
-                The whitespace marked in red are called marigin and it's the space that sits between the border and the border of other elements. In our example, it's the space between two frames.
+                The photo above shows two paintings.
+                There are a few things to notice in this photo. The paintings are framed and there is a visible
+                whitespace between the edge of the paintings and the edge of the wooden frame.
+                There is a small space between the frames.
+                The painting on the right has more whitespace than the two other paintings.
             </p>
-             
-            <img width="500px" src="./html-css/negative spaces.png" />
-            <p>the difference in plain english</p>
-            <p>introduce the box model</p>
-            <!-- Show the box model -->
-            <div></div>
-
+            <h2>Margin, Padding and Border</h2>
+            <img width="500px" src="./html-css/margin-and-padding.jpg" />
+            <p>
+                The space between the painting and the edge of the frame (marked in green) is called padding in CSS.
+                <br />
+                The space separating both frames (marked in red) is called Margin. Do you see the difference now?
+                The wooden frame in CSS is the equivalent of Border.
+            </p>
+            <p>
+                Here is how you set these three properties in CSS.
+            </p>
+            <pre>
+                <br>
+                .class-for-any-content {
+                    margin: 10px;
+                    padding: 10px;
+                    border-color: black;
+                    border-width: 2px;
+                }
+                <br>
+            </pre>
+            <div>
+            </div>
         </div>
+        <div></div>
     </div>
 </body>
 
