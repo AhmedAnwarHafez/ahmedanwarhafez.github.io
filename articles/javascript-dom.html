@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Fundmentals</title>
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="../index.html">Articles</a>
+        <a href="../aboutme.html">About me</a>
+    </div>
+    <div id="contents-grid">
+        <div></div>
+        <div>
+            <div>
+                <h2>Differences between HTML and CSS</h2>
+                <p>If were to explain HTML to a non techinical person I would say writing HTML is similar to building
+                    constructing a house. A house has is made of columns, walls, beam, brick and a roof. These are the
+                    basic
+                    building basic.
+                    <br>
+                    After completion, comes next painting and decoration. This is the step which gives the soul or
+                    character to buildings.
+                    One cannot start painting a wall if there is no wall already, right?
+                    So the first step when developing a webpage is to start writing HTML first, then stylise, format and
+                    colorise HTML elements next.
+                </p>
+            </div>
+            <div>
+                <h2>Control Flow and Loops</h2>
+                <p>Control Flow and Loops are most basic and important foundations for any programming language. Any
+                    simple meaningful program must at least has control flow, loops or both.
+                    Let's consider this simple analogy before explaining Control Flow and Loops.
+                    Imagine a school teacher who gaves his students a paper exam with one true-false question.
+                    The teacher grabs a pile of exams on his right and picks the exam for some student for grading, he
+                    looks at the answer and gives a point if the answer is true or no point if the answer is false.
+                    The next step is he puts the paper to hid left side. Then he grabs the next paper from the pile on
+                    his right. Teacher A repeats these steps until there are no papers to grade.
+                    If you think about it for a moment you'll that the process of grading the exam is very mechanical
+                    and systematic and can be programmed.
+                    There are collection of things that we want to process until some kind of condition is met in order
+                    to terminate. If the answer is correct then a point is given, else do nothing.
+                    IF Conditions is one of most common used control flows and it tells the computer to either process
+                    or skip a computation based on a condition.
+                    In our example, the condition is either the student has provided the correct answer or not.
+                    Since there are a collection of things to process (exam answers), we need a loop to traverse the
+                    collection.
+                    There are two ways of achieving this and here is a psuedo-code:
+
+                <ul>
+                    <li>Using a for-loop</li>
+                    <pre>
+                    for (i=0; i <= answers.length; i++) {
+                        const current = answers[i];
+                        if (current == true) {
+                            // give one point
+                        } else {
+                            // do nothing
+                        }
+                    }
+                    </pre>
+                    <li>
+                        Using a while-loop
+                    <pre>
+                    while (end_of_test(answers) == false) {
+                        const current = answers[i];
+                        if (current == true) {
+                            // give one point
+                        } else {
+                            // do nothing
+                        }
+                    }
+                    </pre>
+                    </li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</body>
+
+</html>
