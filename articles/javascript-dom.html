@@ -4,6 +4,14 @@
 <head>
     <title>JS Fundmentals</title>
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <style>
+        q {
+            border-left: dimgrey;
+            background-color: grey;
+            color: white;
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,6 +41,7 @@
                 <p>Control Flow and Loops are most basic and important foundations for any programming language. Any
                     simple meaningful program must at least has control flow, loops or both.
                     Let's consider this simple analogy before explaining Control Flow and Loops.
+                    <br>
                     Imagine a school teacher who gaves his students a paper exam with one true-false question.
                     The teacher grabs a pile of exams on his right and picks the exam for some student for grading, he
                     looks at the answer and gives a point if the answer is true or no point if the answer is false.
@@ -40,15 +49,16 @@
                     his right. Teacher A repeats these steps until there are no papers to grade.
                     If you think about it for a moment you'll that the process of grading the exam is very mechanical
                     and systematic and can be programmed.
+                    <br>
                     There are collection of things that we want to process until some kind of condition is met in order
                     to terminate. If the answer is correct then a point is given, else do nothing.
-                    IF Conditions is one of most common used control flows and it tells the computer to either process
+                    If Conditions is one of most common used control flows and it tells the computer to either process
                     or skip a computation based on a condition.
+                    <br>
                     In our example, the condition is either the student has provided the correct answer or not.
                     Since there are a collection of things to process (exam answers), we need a loop to traverse the
                     collection.
                     There are two ways of achieving this and here is a psuedo-code:
-
                 <ul>
                     <li>Using a for-loop</li>
                     <pre>
@@ -63,7 +73,7 @@
                     </pre>
                     <li>
                         Using a while-loop
-                    <pre>
+                        <pre>
                     while (end_of_test(answers) == false) {
                         const current = answers[i];
                         if (current == true) {
@@ -75,6 +85,131 @@
                     </pre>
                     </li>
                 </ul>
+                </p>
+            </div>
+            <div>
+                <h2>What is the DOM?</h2>
+                <p>The formal definition of the DOM defined <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">Mozilla's</a>
+                    documentation:
+                </p>
+                <q>The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each
+                    node contains objects. DOM methods allow programmatic access to the tree. With them, you can change
+                    the document's structure, style, or content.</q>
+                <p>
+                    A simple explaination would be the DOM allows you to get, add, change or delete elements/attributes.
+                </p>
+                <p>
+                    This code snippet shows how to change the color of a paragraph given an ID using the DOM.
+                    First we access the <code>document</code> then access or get the element by its ID, in this example,
+                    it's <code>myParagraph</code>. To assign the color red we access the style and color.
+                </p>
+                <pre>
+document.getElementById("myParagraph").style.color = "red";
+                    </pre>
+            </div>
+            <div>
+                <h2>Javascript Arrays vs Objects</h2>
+                <p>Arrays are one of the most widely used data structurs in Javascript. Data stored in arrays are called
+                    elements and each element stored is assigned a numerical position known as index.
+                    Arrays in Javascript always start at index zero. The easist way to define an array is:
+                <pre>
+                        // any empty array
+                        let myArray = [];
+                    </pre>
+                An array should hold elements of the same type, for example a collection of numbers, strings, arrays or
+                objects.
+                To access or read an element in an array we use the index:
+                <pre>
+                        const greetings = [ 'Hello World', 'Good bye' ];
+                        const greeting = greetings[0];
+                        console.log(greeting);
+
+                        > 'Hello World'
+                    </pre>
+                Suppose we have a list of prices and we want to find the avergae.
+                To traverse or loop through all elements in an array we use a for loop to calculate the average.
+                <pre>
+                        const prices = [ 5.99, 6.99, 5.40, 5.80 ];
+                        let sumPrice = 0.0;
+                        prices.forEach((price) => { sumPrice = price + sumPrice });
+                        console.log(sumPrice / prices.length);
+
+                        > 6.045
+                    </pre>
+
+                <p>
+                    In the code above, <code>sumPrice</code> is initialised to 0.0, then we loop and accumulate using
+                    the <code>forEach</code> loop.
+                    The last step is to divide the sum of the total number of elements in the array using the
+                    <code>length</code> and print it to the console.
+                </p>
+
+                <p>
+                    Another way of calculating the sum is to use the <code>reduce()</code> function.
+                <pre>
+                    const sumPrice = prices.reduce((accumulator, currentPrice) => accumulator + currentPrice)
+                </pre>
+                </p>
+
+                <p>
+                    Javascript Objects are slightly different than Arrays. Objects are a collection key/value pairs that
+                    represent a thing.
+                    For example, a person, a car or a character in a video game can be represented as objects.
+                    The easist way to define an object is by defining an empty object with no properties:
+
+                <pre>
+                        let myObject = {};
+                    </pre>
+                </p>
+                <p>
+                    A person with name, age and address can be represented like this:
+                <pre>
+                        const person = { name: 'Alice', age: 23, address: '10 Fiction Street, La La Land 3433' };
+                    </pre>
+                Values such as 'Alice' must assigned to named property/key.
+                </p>
+                <p>
+                    Accessing a property in an object is easy. Either by using a dot notation or by the square brackets.
+
+                <pre>
+                        const person = { name: 'Alice', age: 23, address: '10 Fiction Street, La La Land 3433' };
+                        console.log(person.name);
+                        console.log(person['name']);
+
+                        > Alice
+                          Alice
+                    </pre>
+                </p>
+            </div>
+            <div>
+                <h2>Javascript Functions</h2>
+                <p>
+                    So what are functions? Functions are a collection of instructions that have one purpose and can be
+                    reused.
+                    Data can be passed and/or received from a function. The data that is passed to a function is called
+                    argument(s).
+                    Programs that receive data from called functions can be processed by the caller.
+                <pre>
+                    // A function that neither receives nor returns data:
+                    function sayHello() { console.log('Hello'); }
+                </pre>
+                <pre>
+                    // A function that receives 2 arguments
+                    function save(employeeId, balance) {
+                        // some code here
+                    }
+                </pre>
+                <pre>
+                    // A function that will always return Pi but does not receive any
+                    function () {
+                        return Math.PI;
+                    }
+                </pre>
+                There is a shorthand for writing functions that I find elegant ans requires less typing:
+                <pre>
+                    const sayHello = () => console.log('Hello');
+                </pre>
                 </p>
             </div>
         </div>
