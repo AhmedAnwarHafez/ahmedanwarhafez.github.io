@@ -184,6 +184,44 @@ document.getElementById("myParagraph").style.color = "red";
             </div>
             <div>
                 <h2>Javascript Functions</h2>
+                <h3>Factory Example</h3>
+                <p>
+                    Before I explain we go into the details of what function are, allow me to talk about Mobile Phone
+                    factories as an analogy.
+                    I believe it will help the reader to understand of functions work and why they are important.
+                    <br>
+                    Consider a factory that manufactures a mobile phone from scratch. The factory has different
+                    departments that specialise in making the components for a mobile phone for example, the screen,
+                    CPU, battery, and so on.
+                    The factory gets raw materials, such as plastic, iron, copper, gold to build all kinds of components
+                    and chips.
+                    Imagine a very long belt and all departments sitting next to it dispatching the raw materials to
+                    build components, after a component is built, its put back on the belt for another department to
+                    pick up.
+                    The last step on the built happens is the component assembly.
+
+                    This block diagram shows how the factory works:
+                </p>
+                <img src="./javascript-dom/factory.svg">
+
+                <p>
+                    Each department has an input (blue arrow) and its own mission of building some component that will
+                    placed back on the belt so that other departments can dispatch during the process.
+                <br>
+                <br>
+                    It's possible that a department can pass and return things between other department or even sub
+                    departments like the example below.
+                </p>
+                <img src="./javascript-dom/factory-advanced.svg">
+                <p>
+                    The Chips department gets its input from the belt and spits out some output to the next department, which is the CPU.
+                    <br>
+                    The CPU takes the output of the Chips department's output as an input and the result is placed back to the belt.
+                </p>
+                <p>
+                    So what this analogy has to do with Functions? Functions behave similar as departments, they have a purpose or a mission, which is carrying some kind of a function.
+                    The Factory's belt behaves as a huge function that invokes or calls other functions and pass/receive data between them.
+                </p>
                 <p>
                     So what are functions? Functions are a collection of instructions that have one purpose and can be
                     reused.
